@@ -14,11 +14,12 @@ public class Fibonnaci {
   }
 
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     String input;
     int num;
   
+    System.out.println();
     System.out.println("Digite o número desejado:");
     
     while (true) {
@@ -39,6 +40,27 @@ public class Fibonnaci {
       break;
     }
 
+    System.out.println();
+    System.out.println("Digite o número da operação que deseja realizar:");
+    System.out.println("1- Linear");
+    System.out.println("2- Recursiva");
+
+    while (true) {
+      input = scanner.nextLine();
+
+      switch (input) {
+          case "1":
+            System.out.println("Resultado Linear: " + fibonnaciLinear(num));
+            break;
+          case "2":
+            System.out.println("Resultado Recursivo: " + fibonnaciRecursivo(num));
+            break;
+          default:
+            System.out.println("Erro! Operação inválida.");
+            continue;
+      }
+      break;
+    }
     scanner.close();
   }
 }
