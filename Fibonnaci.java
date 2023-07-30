@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Fibonnaci {
-
   private static Integer fibonnaciLinear(int num) {
     ArrayList<Integer> fibonnaci = new ArrayList<>();
     fibonnaci.add(0);
@@ -49,7 +48,6 @@ public class Fibonnaci {
         System.out.println("Erro! O número deve ser maior ou igual a 0!");
         continue;
       }
-
       break;
     }
 
