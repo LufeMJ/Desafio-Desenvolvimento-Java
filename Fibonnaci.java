@@ -3,16 +3,29 @@ import java.util.ArrayList;
 
 public class Fibonnaci {
 
-  private static ArrayList<Integer> fibonnaciLinear(int num) {
-    ArrayList<Integer> result = new ArrayList<>();
+  private static Integer fibonnaciLinear(int num) {
+    ArrayList<Integer> fibonnaci = new ArrayList<>();
+    fibonnaci.add(0);
+    fibonnaci.add(1);
+
+    for (int i = 2; i < num+1; i++) {
+      int fibonnaciProx = fibonnaci.get(i-1) + fibonnaci.get(i-2);
+      fibonnaci.add(fibonnaciProx);
+    }
+
+    int result = fibonnaci.get(num);
+
     return result;
   }
 
-  public static ArrayList<Integer> fibonnaciRecursivo(int num) {
-    ArrayList<Integer> result = new ArrayList<>();
-    return result;
+  public static Integer fibonnaciRecursivo(int num) {
+    if (num < 2) {
+      return num;
+    }
+    else {
+      return fibonnaciRecursivo(num-1) + fibonnaciRecursivo(num-2);
+    }
   }
-
 
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -32,8 +45,8 @@ public class Fibonnaci {
         continue;
       }
   
-      if (num < 2) {
-        System.out.println("Erro! O número deve ser maior que 1!");
+      if (num < 0) {
+        System.out.println("Erro! O número deve ser maior ou igual a 0!");
         continue;
       }
 
