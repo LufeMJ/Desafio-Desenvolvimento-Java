@@ -7,7 +7,7 @@ public class Numeros_Primos {
   private static ArrayList<Integer> primoLinear(int num) {
     ArrayList<Integer> result = new ArrayList<>();
 
-    for (int i = 2; i < num; i++) {
+    for (int i = 2; i <= num; i++) {
       int num_aux = 1;
       int primo_aux = 0;
 
@@ -40,7 +40,7 @@ public class Numeros_Primos {
   private static ArrayList<Integer> primoRecursivo(int num) {
     ArrayList<Integer> result = new ArrayList<>();
 
-    for (int i = 2; i < num; i++) {
+    for (int i = 2; i <= num; i++) {
       if (verificaPrimo(i, 2)) {
         result.add(i);
       }
