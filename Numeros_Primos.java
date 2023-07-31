@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Numeros_Primos {
 
+  //Função que vai criar uma lista de números primos de forma linear
   private static ArrayList<Integer> primoLinear(int num) {
     ArrayList<Integer> result = new ArrayList<>();
 
@@ -24,6 +25,7 @@ public class Numeros_Primos {
     return result;
   }
 
+  //Função que faz a verificação recursiva se um numero é primo
   private static boolean verificaPrimo(int num, int aux) {
     if ((num == 2) || (aux > num/2)) {
       return true;
@@ -34,6 +36,7 @@ public class Numeros_Primos {
     return verificaPrimo(num, aux+1);
     }
 
+  //Função que vai utilizar de recursividade para criar a lista de números primos
   private static ArrayList<Integer> primoRecursivo(int num) {
     ArrayList<Integer> result = new ArrayList<>();
 
@@ -46,28 +49,30 @@ public class Numeros_Primos {
   }
 
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    String input;
-    int num;
+    Scanner scanner = new Scanner(System.in);       //Scanner para verificar o input do usuário
+    String input;                                   //Variável que vai receber o input do usuário
+    int num;                                        //Variável que vai receber o input convertido em um inteiro
   
     System.out.println();
     System.out.println("Digite o número desejado:");
     
+    //Loop para fazer a validação do input
     while (true) {
       input = scanner.nextLine();
       
+      //Try Catch para verificar se o input pode ser transformado em um inteiro
       try {
         num = Integer.parseInt(input);
       } catch (Exception e) {
-        System.out.println("Erro! Digite apenas um número!");
+        System.out.println("Erro! Digite apenas um número inteiro!");
         continue;
       }
   
+      //Verifica se o número inteiro é maior que 1
       if (num < 2) {
         System.out.println("Erro! O número deve ser maior que 1!");
         continue;
       }
-
       break;
     }
 
@@ -76,9 +81,11 @@ public class Numeros_Primos {
     System.out.println("1- Linear");
     System.out.println("2- Recursiva");
 
+    //Loop para validar a forma que será executado o desafio
     while (true) {
       input = scanner.nextLine();
 
+      //Switch case para verificar qual foi a operação selecionada
       switch (input) {
           case "1":
             System.out.println("Resultado Linear: " + primoLinear(num));
